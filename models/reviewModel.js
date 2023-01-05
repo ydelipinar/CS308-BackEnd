@@ -7,6 +7,11 @@ const reviewSchema = mongoose.Schema(
         ref: 'Referee',
         required: true,
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+  },
 
     comment: {
       type: String,
@@ -18,11 +23,19 @@ const reviewSchema = mongoose.Schema(
       type: String,
      }
     ],
+    likecount: {
+      type: Number,
+      default: 0,
+  },
     dislike: [
      {
       type: String,
      }
     ],
+    dislikecount: {
+      type: Number,
+      default: 0,
+  },
     report:[
       {
       type: String,    
